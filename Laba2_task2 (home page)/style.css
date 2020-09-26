@@ -1,0 +1,222 @@
+/* Студент Гайдук Сергiй Сергiйович група КН-19-1 */
+
+body {
+  margin: 0;
+  font-family: 'Epilogue', sans-serif;
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Контейнер */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Интро */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh; /* на весь экран */
+
+  background: url("images/intro.jpg") center
+  no-repeat;
+  -webkit-background-size: cover; /* ? */
+  background-size: cover;
+}
+
+.intro_inner {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro__title {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 120px;
+  font-weight: 700;
+  text-transform: uppercase; /* Верхний регистр */
+  line-height: 1;
+  margin: 20px auto;
+}
+
+.intro__title:after { /* Полоска */
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 60px auto;
+
+  background-color: #fff;
+}
+
+.intro__suptitle {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 70px;
+  color: #fff;
+}
+
+.button {
+
+}
+
+/* Шапка (Header) */
+.header {
+  width: 100%;
+  padding-top: 30px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between; /* Позиция */
+  align-items: center; /* Выравнивание */
+}
+
+.header__logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Панель навигации */
+.nav {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.nav__link {
+  display: inline-block;
+  vertical-align: top; /* выравнивание в строку */
+  margin:0 15px;
+
+  position: relative;
+
+  color: #fff;
+  text-decoration: none;
+
+  transition: color 0.1s linear; /* Плавное смена цвета */
+}
+
+/* Псевдо элементы */
+.nav__link::after { /* Параметры для полоски под эл.навигации*/
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+
+  background-color: #fc338a;
+  /* Плавное появление */
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.nav__link:hover:after { /* Отображение полоски при наведении*/
+  opacity: 1;
+}
+
+.nav__link:hover { /* Подсветка при наведении*/
+  color: #fce38a;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px 30px;
+
+  border: 3px solid #fff; /* Сплошной белый */
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+
+  transition: background 0.1s
+  linear, color 0.1s linear;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Slider(снизу) */
+.slider {
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.slider_inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_item {
+  width: 23%;
+  padding: 20px 0;
+  position: relative; /* Позиционирование относит. эл.*/
+
+  border-top: 3px solid #fff;
+  opacity: 0.7;
+
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.slider_item.active {
+  opacity: 1;
+}
+
+.slider_item.active:before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+
+  background-color: #fc338a;
+
+  position: absolute;
+  top: -3px;
+  left: 0;
+  z-index: 1;
+}
+
+.slider_number {
+  font-size: 24px;
+  font-weight: 700;
+}
